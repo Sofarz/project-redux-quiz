@@ -1,5 +1,5 @@
+// Hello everyone?
 import { createSlice } from '@reduxjs/toolkit'
-
 // Change these to your own questions! store ALL questions in quiz here!
 const questions = [
   { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
@@ -44,6 +44,8 @@ export const quiz = createSlice({
       if (question.options[answerIndex] === undefined) {
         throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
       }
+
+
 
       state.answers.push({
         questionId,
