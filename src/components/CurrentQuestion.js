@@ -26,7 +26,13 @@ export const CurrentQuestion = () => {
     <div>
       <h1>Question: {question.questionText}</h1>
       {question.options.map((option, index) => (
-        <OptionButton option={option} key={index} onButtonClick={() => onButtonClick(option)}/>
+        <OptionButton 
+          option={option} 
+          key={index}
+          index={index} 
+          correctAnswerIndex={question.correctAnswerIndex}
+          onButtonClick={() => onButtonClick(option)}
+        />
       ))}
 
       <button onClick={() => dispatch(quiz.actions.goToNextQuestion())} type="button">
