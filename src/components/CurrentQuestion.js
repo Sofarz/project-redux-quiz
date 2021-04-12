@@ -15,11 +15,18 @@ export const CurrentQuestion = () => {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
+  const onButtonClick = (option) => {
+    // handleNextQuestion(true)
+    return dispatch(quiz.actions.submitAnswer(
+      { questionId: question.id, answerIndex: question.options.indexOf(option) }
+    ))
+  }  
+
   return (
     <div>
       <h1>Question: {question.questionText}</h1>
       {question.options.map((option, index) => (
-        <OptionButton option={option} key={index} onClick={(option) => dispatch(quiz.actions.submitAnswer({questionId: question.id, answerIndex: question.options.indexOf(option)}))}/>
+        <OptionButton option={option} key={index} onButtonClick={() => onButtonClick(option)}/>
       ))}
 
       <button onClick={() => dispatch(quiz.actions.goToNextQuestion())} type="button">

@@ -1,11 +1,11 @@
 import React from 'react'
 
 
-export const OptionButton = ({option}) => {
+export const OptionButton = ({option, onButtonClick}) => {
     console.log(option)
     return(
         <div>
-            <button>{option}</button>
+            <button onClick={onButtonClick}>{option}</button>
         </div>
     )
 }
