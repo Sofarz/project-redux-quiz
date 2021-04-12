@@ -2,8 +2,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 // Change these to your own questions! store ALL questions in quiz here!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: "What was the name of Han Solo's ship?", options: ["Bacon Millennium", "Yolo Yoda", "Millennium Falcon", "Snabb Fågel"], correctAnswerIndex: 2 },
+  { id: 2, questionText: "Who was the director of Star Wars IV: A New Hope?", options: ["Quentin Tarantino", "George Lucas", "J.J. Abrams", "Michael Bay", "Steven Spielberg"], correctAnswerIndex: 1 },
+  { id: 3, questionText: "What is the name of the mysterious power used throughout Star Wars by the Jedi and Sith? ", options: ["Schnapps","Jante Lagen", "The One Ring To Rule Them All", "Nuclear Power", "The Hammer", "The Force"], correctAnswerIndex: 5},
+  { id: 4, questionText: "What was the name of Princess Leia's planet?", options: ["Kepler 22B","Tatooine", "Naboo", "Alderaan", "Mars"], correctAnswerIndex: 3},
+  { id: 5, questionText: "What was Leia's last name?", options: ["Organa","Skywalker", "Solo", "Dameron", "Fett"], correctAnswerIndex: 0}
 ]
 
 const initialState = {
