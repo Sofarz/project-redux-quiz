@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { quiz } from './reducers/quiz'
+import { quiz } from '../reducers/quiz'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
