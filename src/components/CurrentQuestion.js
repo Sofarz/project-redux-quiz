@@ -35,27 +35,29 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div className="quiz-container">
-      <h1 className="question-text">Question: {question.questionText}</h1>
-      {question.options.map((option, index) => (
-        <button
-          type="button"
-          option={option}
-          key={index}
-          index={index}
-          correctAnswerIndex={question.correctAnswerIndex}
-          onClick={() => onButtonClick(option, index)}
-          disabled={answers[currentQuestionIndex]}
-          className={chooseColor(index)}>
-          {option}
+    <div className="quiz-body">
+      <div className="quiz-container">
+        <h1 className="question-text"> Question: {question.questionText}</h1>
+        {question.options.map((option, index) => (
+          <button
+            type="button"
+            option={option}
+            key={index}
+            index={index}
+            correctAnswerIndex={question.correctAnswerIndex}
+            onClick={() => onButtonClick(option, index)}
+            disabled={answers[currentQuestionIndex]}
+            className={chooseColor(index)}>
+            {option}
+          </button>
+        ))}
+        <button disabled={!answers[currentQuestionIndex]} className="next-question-button" onClick={() => dispatch(quiz.actions.goToNextQuestion())} type="button">
+          {currentQuestionIndex < 4 ? 
+          "Go to next question" : "Finish"
+          }
         </button>
-
-      ))}
-
-      <button className="next-question-button" onClick={() => dispatch(quiz.actions.goToNextQuestion())} type="button">
-        Go to next question
-      </button>
-      <p> {currentQuestionIndex + 1}/5 </p>
+        <p> {currentQuestionIndex + 1}/5 </p>
+      </div>
     </div>
   )
 }
