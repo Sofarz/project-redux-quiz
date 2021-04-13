@@ -6,6 +6,7 @@ import { OptionButton } from './OptionButton'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+  const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex)
   const quizOver = useSelector((state) => state.quiz.quizOver)
   // we can write it store instead of state(optional)
 
@@ -38,6 +39,7 @@ export const CurrentQuestion = () => {
       <button onClick={() => dispatch(quiz.actions.goToNextQuestion())} type="button">
         Go to next question
       </button>
+      <p> {currentQuestionIndex+1}/5 </p>
     </div>
   )
 }
