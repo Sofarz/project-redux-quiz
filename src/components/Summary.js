@@ -7,9 +7,9 @@ export const Summary = () => {
     const dispatch = useDispatch()
     let counter = 0
     const summaryAnswers = useSelector((state) => state.quiz.answers)
-    summaryAnswers.map((answer) => {
+    summaryAnswers.forEach((answer) => {
         if (answer.isCorrect === true) {
-            return counter = counter + 1
+            return (counter = counter + 1)
         }
     })
 
