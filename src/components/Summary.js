@@ -7,11 +7,12 @@ export const Summary = () => {
     const dispatch = useDispatch()
     let counter = 0
     const summaryAnswers = useSelector((state) => state.quiz.answers)
-    summaryAnswers.map(answer => {
+    summaryAnswers.map((answer) => {
         if (answer.isCorrect === true) {
-            counter = counter + 1
+            return counter = counter + 1
         }
     })
+
     return (
         <>
             <div className="summary-container">
