@@ -11,9 +11,11 @@ export const OptionButton = ({ option, onButtonClick, correctAnswerIndex, index 
     // const handleButtonStyling = () => {
     //     if (currentAnswer === undefined) {
     //         //neutral className for button. Add 2 more if statements to determine
-               //if answer was correct or not
+    //         return 'button-default'
+    //     } else { if (currentAnswer.isCorrect)
+
     //     }
-    //     return 'green-border'
+        
     // }
 
     return(
@@ -21,7 +23,7 @@ export const OptionButton = ({ option, onButtonClick, correctAnswerIndex, index 
             <button 
                 type="button"
                 // className={handleButtonStyling()}
-                // className={index === correctAnswerIndex ? 'green-border' : 'red-border'}
+                // // className={index === correctAnswerIndex ? 'green-border' : 'red-border'}
                 onClick={onButtonClick}>
                     {option}
             </button>
