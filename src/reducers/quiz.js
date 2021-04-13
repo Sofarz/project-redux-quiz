@@ -1,4 +1,3 @@
-// Hello everyone?
 import { createSlice } from '@reduxjs/toolkit'
 // Change these to your own questions! store ALL questions in quiz here!
 const questions = [
@@ -37,7 +36,6 @@ export const quiz = createSlice({
      * and `answerIndex` keys. See the readme for more details.
      */
     submitAnswer: (state, action) => {
-      console.log('hey!')
       const { questionId, answerIndex } = action.payload
       const question = state.questions.find((q) => q.id === questionId)
 

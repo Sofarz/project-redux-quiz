@@ -5,7 +5,6 @@ import { quiz } from '../reducers/quiz'
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex)
-  // const currentAnswer = useSelector((state) => state.quiz.answers[currentQuestionIndex])
   const answers = useSelector((state) => state.quiz.answers)
 
   const dispatch = useDispatch()
@@ -18,7 +17,6 @@ export const CurrentQuestion = () => {
     dispatch(quiz.actions.submitAnswer(
       { questionId: question.id, answerIndex: question.options.indexOf(option) }
     ))
-    console.log(answers)
   }
 
   const chooseColor = (index) => {
@@ -32,7 +30,6 @@ export const CurrentQuestion = () => {
         return 'red-border'
       }
     }
-    
   }
 
   return (
@@ -42,10 +39,8 @@ export const CurrentQuestion = () => {
         {question.options.map((option, index) => (
           <button
             type="button"
-            option={option}
             key={index}
             index={index}
-            correctAnswerIndex={question.correctAnswerIndex}
             onClick={() => onButtonClick(option, index)}
             disabled={answers[currentQuestionIndex]}
             className={chooseColor(index)}>

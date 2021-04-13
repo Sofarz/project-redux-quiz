@@ -12,15 +12,14 @@ export const Summary = () => {
             counter = counter + 1
         }
     })
-    console.log(counter)
     return (
         <>
             <div className="summary-container">
                 <div className="summary-text">
                     {counter < 3 ?
-                    <p>You answered {counter} out of 5 questions correctly. That is not that great TBH</p>
+                    <p>You answered {counter} out of 5 questions correctly. The force is not strong in this one...</p>
                     :
-                    <p>You know your stuff! You answered {counter} out of 5 questions correctly</p>}
+                    <p>You know your stuff! You answered {counter} out of 5 questions correctly. The force is with you!</p>}
                 </div>
              <button className="restart-button" onClick={() => dispatch(quiz.actions.restart())} type="button">
             Retake quiz
