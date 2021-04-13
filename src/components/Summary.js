@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { quiz } from '../reducers/quiz'
 
-
 export const Summary = () => {
+    const dispatch = useDispatch()
     let counter = 0
     const summaryAnswers = useSelector((state) => state.quiz.answers)
     summaryAnswers.map(answer => {
@@ -13,5 +13,16 @@ export const Summary = () => {
         }
     })
     console.log(counter)
-    return (counter)
+    return (
+        <>
+            {counter < 3 ?
+            <p>You answered {counter} out of 5 questions correctly. That is not that great TBH</p>
+            :
+            <p>You know your stuff! You answered {counter} out of 5 questions correctly</p>}
+             <button className="restart-button" onClick={() => dispatch(quiz.actions.restart())} type="button">
+            Retake quiz
+            </button>
+        </>
+    )
+
 }
