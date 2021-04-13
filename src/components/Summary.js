@@ -15,13 +15,17 @@ export const Summary = () => {
     console.log(counter)
     return (
         <>
-            {counter < 3 ?
-            <p>You answered {counter} out of 5 questions correctly. That is not that great TBH</p>
-            :
-            <p>You know your stuff! You answered {counter} out of 5 questions correctly</p>}
+            <div className="summary-container">
+                <div className="summary-text">
+                    {counter < 3 ?
+                    <p>You answered {counter} out of 5 questions correctly. That is not that great TBH</p>
+                    :
+                    <p>You know your stuff! You answered {counter} out of 5 questions correctly</p>}
+                </div>
              <button className="restart-button" onClick={() => dispatch(quiz.actions.restart())} type="button">
             Retake quiz
             </button>
+            </div>
         </>
     )
 

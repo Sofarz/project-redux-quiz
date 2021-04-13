@@ -32,6 +32,7 @@ export const CurrentQuestion = () => {
         return 'red-border'
       }
     }
+    
   }
 
   return (
@@ -56,7 +57,7 @@ export const CurrentQuestion = () => {
           "Go to next question" : "Finish"
           }
         </button>
-        <p> {currentQuestionIndex + 1}/5 </p>
+        <p className="current-counter"> {currentQuestionIndex + 1}/5 </p>
       </div>
     </div>
   )
